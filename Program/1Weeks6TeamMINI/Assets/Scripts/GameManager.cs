@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     private Panel panel;
     public Text timeTxt;
     public Text endTxt;
-
+    float timer = 0f;
     AudioSource audioSource;
     public AudioClip clip;
 
@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour
                 panel.LoadContent(firstCard.idx);
             }
             Time.timeScale = 0f;
-            gamePanel.SetActive(true);
+            StartCoroutine(ShowCoroutine());
             audioSource.PlayOneShot(clip);
             firstCard.DestroyCard();
             secondCard.DestroyCard();
@@ -82,5 +82,14 @@ public class GameManager : MonoBehaviour
     {
         gamePanel.SetActive(false);
         Time.timeScale = 1f;
+    }
+    IEnumerator ShowCoroutine()
+    {
+        yield return new WaitForSecondsRealtime(0.4f);
+        Show();
+    }
+    public void Show()
+    {
+        gamePanel.SetActive(true);
     }
 }
