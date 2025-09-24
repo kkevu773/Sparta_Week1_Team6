@@ -8,11 +8,11 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     public GameObject gamePanel;
-    private Panel panel;
+
 
     public card firstCard;
     public card secondCard;
-
+    private Panel panel;
     public Text timeTxt;
     public GameObject endTxt;
 
@@ -49,10 +49,7 @@ public class GameManager : MonoBehaviour
         else
         {
             totalTime = 0f;
-            endTxt.SetActive(true);
             Time.timeScale = 0f;
-            audioSource.Stop();
-
         }
 
         timeTxt.text = totalTime.ToString("N2");
@@ -73,8 +70,7 @@ public class GameManager : MonoBehaviour
             cardCount -= 2;
             if(cardCount == 0)
             {
-                endTxt.SetActive(true);
-                Time.timeScale = 0.0f;              
+                Time.timeScale = 0.0f;
             }
         }
         else
