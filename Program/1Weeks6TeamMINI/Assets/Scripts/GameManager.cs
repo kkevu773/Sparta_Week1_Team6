@@ -54,22 +54,21 @@ public class GameManager : MonoBehaviour
             else
             {
                 totalTime = 0f;
-                restartbtn.SetActive(true);
                 Time.timeScale = 0f;
                 audioSource = null;
                 isGameOver = true;
             }
         }
-        
-       
+
+
 
         timeTxt.text = totalTime.ToString("N2");
     }
     public void Matched()
     {
-        if(firstCard.idx == secondCard.idx)
+        if (firstCard.idx == secondCard.idx)
         {
-            if(panel != null)
+            if (panel != null)
             {
                 panel.LoadContent(firstCard.idx);
             }
@@ -79,7 +78,7 @@ public class GameManager : MonoBehaviour
             firstCard.DestroyCard();
             secondCard.DestroyCard();
             cardCount -= 2;
-            if(cardCount == 0)
+            if (cardCount == 0)
             {
                 restartbtn.SetActive(true);
                 Time.timeScale = 0.0f;
