@@ -6,18 +6,16 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    public GameObject gamePanel; // 캐릭터 창
+
+    public GameObject gamePanel;
+
+
     public card firstCard;
     public card secondCard;
     private Panel panel;
     public Text timeTxt;
-<<<<<<< HEAD
-    public Text endTxt;
-    float timer = 0f;
-=======
     public GameObject endTxt;
 
->>>>>>> New-Dev_1
     AudioSource audioSource;
     public AudioClip clip;
 
