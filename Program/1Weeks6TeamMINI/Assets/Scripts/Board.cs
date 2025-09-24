@@ -10,8 +10,8 @@ public class NewBehaviourScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        int[] arr = { 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6};
-        arr = arr.OrderBy(x => Random.Range(0f, 6f)).ToArray();
+        int[] arr = { 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5};
+        arr = arr.OrderBy(x => Random.Range(0f, 5f)).ToArray();
 
         for (int i = 0; i < 16; i++)
         {
