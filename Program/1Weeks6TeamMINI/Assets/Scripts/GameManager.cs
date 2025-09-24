@@ -45,7 +45,9 @@ public class GameManager : MonoBehaviour
         else
         {
             totalTime = 0f;
+            endTxt.SetActive(true);
             Time.timeScale = 0f;
+
         }
 
         timeTxt.text = totalTime.ToString("N2");
