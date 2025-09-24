@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
 
     public float totalTime = 30.0f;
 
-    private bool isGameOver;
+    private bool isGameOver = false;
 
     public void Awake()
     {
@@ -45,22 +45,23 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (totalTime > 0f)
+        if (!isGameOver)
         {
-            totalTime -= Time.deltaTime;
+            if (totalTime > 0f)
+            {
+                totalTime -= Time.deltaTime;
+            }
+            else
+            {
+                totalTime = 0f;
+                restartbtn.SetActive(true);
+                Time.timeScale = 0f;
+                audioSource = null;
+                isGameOver = true;
+            }
         }
-        else
-        {
-            totalTime = 0f;           
-            Time.timeScale = 0f;            
-            audioSource.Stop();
-
-        }
-        if(isGameOver = true)
-        {
-            Time.timeScale = 0f;
-            restartbtn.SetActive(true);
-        }
+        
+       
 
         timeTxt.text = totalTime.ToString("N2");
     }
@@ -79,9 +80,10 @@ public class GameManager : MonoBehaviour
             secondCard.DestroyCard();
             cardCount -= 2;
             if(cardCount == 0)
-            {               
-                Time.timeScale = 0.0f;
+            {
                 restartbtn.SetActive(true);
+                Time.timeScale = 0.0f;
+                isGameOver = true;
             }
         }
         else
