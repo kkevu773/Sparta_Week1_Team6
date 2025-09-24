@@ -30,7 +30,7 @@ public class card : MonoBehaviour
     public void Setting(int number)
     {
         idx = number;
-        frontImage.sprite = Resources.Load<Sprite>($"Resources{idx}");
+        frontImage.sprite = Resources.Load<Sprite>($"UIResources{idx}");
     }
 
 
