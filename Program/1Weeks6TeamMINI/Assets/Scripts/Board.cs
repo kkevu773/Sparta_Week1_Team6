@@ -9,7 +9,7 @@ public class Board : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for(int i = 12; i < 12; i++)
+        for (int i = 0; i < 12; i++)
         {
             GameObject go = Instantiate(Card, this.transform);
 
@@ -18,7 +18,6 @@ public class Board : MonoBehaviour
 
             go.transform.position = new Vector2(x, y);
         }
-
     }
 
     // Update is called once per frame
