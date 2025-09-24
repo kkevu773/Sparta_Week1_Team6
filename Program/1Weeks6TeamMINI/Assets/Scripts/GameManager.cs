@@ -57,6 +57,11 @@ public class GameManager : MonoBehaviour
             audioSource.PlayOneShot(clip);
             firstCard.DestroyCard();
             secondCard.DestroyCard();
+            cardCount -= 2;
+            if(cardCount == 0)
+            {
+                Time.timeScale = 0.0f;
+            }
         }
         else
         {
