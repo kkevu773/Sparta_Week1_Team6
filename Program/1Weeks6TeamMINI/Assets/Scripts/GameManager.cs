@@ -26,6 +26,10 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
         }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     // Start is called before the first frame update
@@ -47,6 +51,7 @@ public class GameManager : MonoBehaviour
             totalTime = 0f;
             endTxt.SetActive(true);
             Time.timeScale = 0f;
+            audioSource.Stop();
 
         }
 
@@ -61,9 +66,9 @@ public class GameManager : MonoBehaviour
             secondCard.DestroyCard();
             cardCount -= 2;
             if(cardCount == 0)
-            {             
-                Time.timeScale = 0.0f;
+            {
                 endTxt.SetActive(true);
+                Time.timeScale = 0.0f;              
             }
         }
         else
