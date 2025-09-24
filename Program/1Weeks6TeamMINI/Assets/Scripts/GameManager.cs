@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     public card secondCard;
 
     public Text timeTxt;
-    public GameObject endPanel;
+    public GameObject restartbtn;
 
     AudioSource audioSource;
     public AudioClip clip;
@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
     public int cardCount = 0;
 
     public float totalTime = 30.0f;
+
+    private bool isGameOver;
 
     public void Awake()
     {
@@ -35,6 +37,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        isGameOver = false;
         Time.timeScale = 1;
         audioSource = GetComponent<AudioSource>();
     }
@@ -48,11 +51,15 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            totalTime = 0f;
-            endPanel.SetActive(true);
-            Time.timeScale = 0f;
+            totalTime = 0f;           
+            Time.timeScale = 0f;            
             audioSource.Stop();
 
+        }
+        if(isGameOver = true)
+        {
+            Time.timeScale = 0f;
+            restartbtn.SetActive(true);
         }
 
         timeTxt.text = totalTime.ToString("N2");
@@ -72,9 +79,9 @@ public class GameManager : MonoBehaviour
             secondCard.DestroyCard();
             cardCount -= 2;
             if(cardCount == 0)
-            {
-                endPanel.SetActive(true);
-                Time.timeScale = 0.0f;              
+            {               
+                Time.timeScale = 0.0f;
+                restartbtn.SetActive(true);
             }
         }
         else
