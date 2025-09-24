@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     public card secondCard;
 
     public Text timeTxt;
-    public Text endTxt;
+    public GameObject endTxt;
 
     AudioSource audioSource;
     public AudioClip clip;
@@ -59,8 +59,9 @@ public class GameManager : MonoBehaviour
             secondCard.DestroyCard();
             cardCount -= 2;
             if(cardCount == 0)
-            {
+            {             
                 Time.timeScale = 0.0f;
+                endTxt.SetActive(false);
             }
         }
         else
