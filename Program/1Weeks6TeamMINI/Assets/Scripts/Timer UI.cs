@@ -2,28 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine;
 
-public class TimerUI : MonoBehaviour
+public class TimerColorChanger : MonoBehaviour
 {
-    public Text timeTxt;
-    public float time = 30f;
+    private GameManager gm;
+
     void Start()
     {
-        
+        gm = FindObjectOfType<GameManager>();
     }
 
-    
     void Update()
     {
-        if (time <= 10.0f)
+        if (gm.totaltime <= 10f)
         {
-            timeTxt.color = Color.red;
+            gm.timeTxt.color = Color.red;
         }
         else
         {
-            timeTxt.color = Color.white;
+            gm.timeTxt.color = Color.white;
         }
     }
-
-    
 }
+

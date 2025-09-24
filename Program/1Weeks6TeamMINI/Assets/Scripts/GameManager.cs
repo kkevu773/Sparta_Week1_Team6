@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
 
     public int cardCount = 0;
 
-    float totalTime = 30.0f;
+    public float totalTime = 30.0f;
 
     AudioSource audioSource;
     public AudioClip clip;
