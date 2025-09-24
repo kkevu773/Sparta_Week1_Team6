@@ -11,10 +11,11 @@ public class GameManager : MonoBehaviour
     public card secondCard;
 
     public Text timeTxt;
+    public Text endTxt;
 
     public int cardCount = 0;
 
-    float totalTime = 30.0f;
+    public float totalTime = 30.0f;
 
     AudioSource audioSource;
     public AudioClip clip;
