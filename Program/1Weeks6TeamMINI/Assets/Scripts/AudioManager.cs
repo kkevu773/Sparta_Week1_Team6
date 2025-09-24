@@ -7,9 +7,8 @@ public class AudioManager : MonoBehaviour
 
     AudioSource audioSource;
     public AudioClip clip;
-<<<<<<< HEAD
-    // Start is called before the first frame update
-=======
+    public static AudioManager Instance;
+
 
     private void Awake()
     {
@@ -23,7 +22,7 @@ public class AudioManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
->>>>>>> New-Dev_1
+
     void Start()
     {
         AudioSource audioSource = GetComponent<AudioSource>();
