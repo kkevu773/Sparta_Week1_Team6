@@ -52,7 +52,8 @@ MonoBehaviour:
   front: {fileID: 1657342441188489581}
   back: {fileID: 2880615407622792983}
   anim: {fileID: 7473075414163067236}
-  frontImage: {fileID: 6518287425073118546}
+  clip: {fileID: 0}
+  frontImage: {fileID: 9106793640711110563}
 --- !u!95 &7473075414163067236
 Animator:
   serializedVersion: 5
@@ -134,7 +135,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 0
 --- !u!4 &1413832245774601007
 Transform:
