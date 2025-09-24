@@ -16,6 +16,9 @@ public class GameManager : MonoBehaviour
 
     float totalTime = 30.0f;
 
+    AudioSource audioSource;
+    public AudioClip clip;
+
     public void Awake()
     {
         if (Instance == null)
@@ -28,6 +31,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Time.timeScale = 1;
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame

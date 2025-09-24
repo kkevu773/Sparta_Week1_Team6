@@ -31,4 +31,10 @@ public class card : MonoBehaviour
         idx = number;
         frontImage.sprite = Resources.Load<Sprite>($"6teamMe{idx}");
     }
+
+    public void OpenCard()
+    {
+        audioSource.PlayOneShot(clip);
+
+    }
 }
