@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 181952411}
   - component: {fileID: 181952413}
   - component: {fileID: 181952412}
+  - component: {fileID: 181952414}
   m_Layer: 5
   m_Name: TimeTxt
   m_TagString: Untagged
@@ -202,6 +203,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 181952410}
   m_CullTransparentMesh: 1
+--- !u!114 &181952414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 181952410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61e8f9e2ee01fdd4b96dbc4849429d62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeTxt: {fileID: 181952412}
+  time: 30
 --- !u!1 &292746804
 GameObject:
   m_ObjectHideFlags: 0
@@ -560,7 +575,9 @@ MonoBehaviour:
   firstCard: {fileID: 0}
   secondCard: {fileID: 0}
   timeTxt: {fileID: 181952412}
+  endTxt: {fileID: 0}
   cardCount: 0
+  clip: {fileID: 0}
 --- !u!82 &1348174734
 AudioSource:
   m_ObjectHideFlags: 0
@@ -752,6 +769,10 @@ PrefabInstance:
     - target: {fileID: 641608616654000339, guid: 8ae3ef97fef7b834ab6a7d28d0fb1709, type: 3}
       propertyPath: m_Name
       value: Card
+      objectReference: {fileID: 0}
+    - target: {fileID: 641608616654000339, guid: 8ae3ef97fef7b834ab6a7d28d0fb1709, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2224235452652786493, guid: 8ae3ef97fef7b834ab6a7d28d0fb1709, type: 3}
       propertyPath: m_LocalPosition.x

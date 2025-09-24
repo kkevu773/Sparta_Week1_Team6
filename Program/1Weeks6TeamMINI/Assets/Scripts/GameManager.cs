@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public card secondCard;
 
     public Text timeTxt;
+    public Text endTxt;
 
     public int cardCount = 0;
 
