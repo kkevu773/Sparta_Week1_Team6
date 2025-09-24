@@ -7,6 +7,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
+    public GameObject gamePanel;
+    private Panel panel;
+
     public card firstCard;
     public card secondCard;
 
@@ -26,10 +29,7 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
         }
-        else
-        {
-            Destroy(gameObject);
-        }
+        panel = gamePanel.GetComponent<Panel>();
     }
 
     // Start is called before the first frame update

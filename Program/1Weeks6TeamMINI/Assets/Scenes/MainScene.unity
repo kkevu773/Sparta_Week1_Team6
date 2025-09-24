@@ -783,7 +783,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1348174733}
+      - m_Target: {fileID: 1348174735}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: ResumeGame
         m_Mode: 1
@@ -1239,8 +1239,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1348174732}
-  - component: {fileID: 1348174733}
   - component: {fileID: 1348174734}
+  - component: {fileID: 1348174735}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1263,25 +1263,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1348174733
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1348174731}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7881d43cfc2e10945bc0a6abe9fcf700, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firstCard: {fileID: 0}
-  secondCard: {fileID: 0}
-  timeTxt: {fileID: 181952412}
-  endTxt: {fileID: 0}
-  clip: {fileID: 8300000, guid: fec2a3feb10a58c4da8403bae3c985b4, type: 3}
-  cardCount: 0
-  totalTime: 30
 --- !u!82 &1348174734
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1378,6 +1359,26 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1348174735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348174731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7881d43cfc2e10945bc0a6abe9fcf700, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gamePanel: {fileID: 2093241347}
+  firstCard: {fileID: 0}
+  secondCard: {fileID: 0}
+  timeTxt: {fileID: 181952412}
+  endTxt: {fileID: 0}
+  clip: {fileID: 0}
+  cardCount: 0
+  totalTime: 30
 --- !u!1 &1477129147
 GameObject:
   m_ObjectHideFlags: 0
@@ -1938,7 +1939,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c911c8c6740debe4084072b53ea6eeda, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2725ea8f09b730e4e8dc72ce1efd3af6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
