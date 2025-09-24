@@ -545,7 +545,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1930988761}
   - {fileID: 184695862}
   m_Father: {fileID: 1713893917}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1276,7 +1275,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7881d43cfc2e10945bc0a6abe9fcf700, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gamePanel: {fileID: 2093241347}
   firstCard: {fileID: 0}
   secondCard: {fileID: 0}
   timeTxt: {fileID: 181952412}
@@ -1623,7 +1621,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1713893916
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1702,7 +1700,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1810983191}
   - component: {fileID: 1810983190}
-  - component: {fileID: 1810983192}
   - component: {fileID: 1810983193}
   m_Layer: 0
   m_Name: AudioManager
@@ -1822,18 +1819,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1810983192
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1810983189}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 827a6c49ddb752945b5c5bde2f0ef427, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1810983193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2087,3 +2072,4 @@ SceneRoots:
   - {fileID: 1348174732}
   - {fileID: 1810983191}
   - {fileID: 2093241348}
+  - {fileID: 1713893917}
