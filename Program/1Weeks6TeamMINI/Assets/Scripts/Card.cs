@@ -41,6 +41,15 @@ public class card : MonoBehaviour
         front.SetActive(true);
         back.SetActive(false);
         audioSource.PlayOneShot(clip);
+        if (GameManager.Instance.firstCard == null)
+        {
+            GameManager.Instance.firstCard = this;
+        }
+        else
+        {
+            GameManager.Instance.secondCard = this;
+            GameManager.Instance.Matched();
+        }
     }
     void OnMouseDown()
     {
