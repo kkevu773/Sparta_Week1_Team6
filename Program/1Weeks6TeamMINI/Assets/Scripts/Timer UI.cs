@@ -15,7 +15,8 @@ public class TimerColorChanger : MonoBehaviour
 
     void Update()
     {
-        if (gm.totaltime <= 10f)
+        float time = gm.totalTime;
+        if (time <= 10f)
         {
             gm.timeTxt.color = Color.red;
         }
