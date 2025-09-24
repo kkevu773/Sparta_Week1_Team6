@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     public GameObject gamePanel;
-    private Panel panel;
+
 
     public card firstCard;
     public card secondCard;
