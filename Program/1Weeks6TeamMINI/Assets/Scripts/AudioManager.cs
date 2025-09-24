@@ -11,7 +11,7 @@ public class AudioManager : MonoBehaviour
 
     private void Awake()
     {
-        if(Instance == null)
+        if (Instance == null)
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
@@ -23,4 +23,5 @@ public class AudioManager : MonoBehaviour
         audioSource.clip = this.clip;
         audioSource.Play();
     }
+}
 
