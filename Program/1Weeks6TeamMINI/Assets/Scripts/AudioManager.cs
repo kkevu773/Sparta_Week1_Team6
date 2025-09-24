@@ -4,10 +4,19 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
+    public static AudioManager Instance;
 
     AudioSource audioSource;
     public AudioClip clip;
-    // Start is called before the first frame update
+
+    private void Awake()
+    {
+        if(Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+    }
     void Start()
     {
         AudioSource audioSource = GetComponent<AudioSource>();
