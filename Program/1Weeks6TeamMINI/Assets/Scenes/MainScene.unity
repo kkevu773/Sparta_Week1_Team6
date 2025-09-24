@@ -405,7 +405,6 @@ GameObject:
   - component: {fileID: 184695865}
   - component: {fileID: 184695864}
   - component: {fileID: 184695863}
-  - component: {fileID: 184695866}
   m_Layer: 5
   m_Name: Button (Legacy)
   m_TagString: Untagged
@@ -476,19 +475,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 184695864}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1713893915}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &184695864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -527,18 +514,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 184695861}
   m_CullTransparentMesh: 1
---- !u!114 &184695866
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 184695861}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eab085cfb55f53e43ba33805135c9477, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &252398497
 GameObject:
   m_ObjectHideFlags: 0
@@ -808,7 +783,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1348174733}
+      - m_Target: {fileID: 1348174735}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: ResumeGame
         m_Mode: 1
@@ -994,7 +969,7 @@ GameObject:
   - component: {fileID: 655146139}
   - component: {fileID: 655146138}
   m_Layer: 5
-  m_Name: EndTxt
+  m_Name: Text (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1264,8 +1239,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1348174732}
-  - component: {fileID: 1348174733}
   - component: {fileID: 1348174734}
+  - component: {fileID: 1348174735}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1288,25 +1263,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1348174733
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1348174731}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7881d43cfc2e10945bc0a6abe9fcf700, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firstCard: {fileID: 0}
-  secondCard: {fileID: 0}
-  timeTxt: {fileID: 181952412}
-  endPanel: {fileID: 1713893915}
-  clip: {fileID: 8300000, guid: fec2a3feb10a58c4da8403bae3c985b4, type: 3}
-  cardCount: 0
-  totalTime: 30
 --- !u!82 &1348174734
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1403,6 +1359,26 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1348174735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348174731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7881d43cfc2e10945bc0a6abe9fcf700, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gamePanel: {fileID: 2093241347}
+  firstCard: {fileID: 0}
+  secondCard: {fileID: 0}
+  timeTxt: {fileID: 181952412}
+  endTxt: {fileID: 0}
+  clip: {fileID: 0}
+  cardCount: 0
+  totalTime: 30
 --- !u!1 &1477129147
 GameObject:
   m_ObjectHideFlags: 0
@@ -1641,12 +1617,12 @@ GameObject:
   - component: {fileID: 1713893917}
   - component: {fileID: 1713893916}
   m_Layer: 0
-  m_Name: EndPanel
+  m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1713893916
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1725,7 +1701,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1810983191}
   - component: {fileID: 1810983190}
-  - component: {fileID: 1810983192}
   - component: {fileID: 1810983193}
   m_Layer: 0
   m_Name: AudioManager
@@ -1845,18 +1820,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1810983192
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1810983189}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 827a6c49ddb752945b5c5bde2f0ef427, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1810983193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1976,7 +1939,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c911c8c6740debe4084072b53ea6eeda, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2725ea8f09b730e4e8dc72ce1efd3af6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

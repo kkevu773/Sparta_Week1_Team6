@@ -7,6 +7,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
+    public GameObject gamePanel;
+    private Panel panel;
+
     public card firstCard;
     public card secondCard;
 
@@ -26,10 +29,7 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
         }
-        else
-        {
-            Destroy(gameObject);
-        }
+        panel = gamePanel.GetComponent<Panel>();
     }
 
     // Start is called before the first frame update
@@ -61,6 +61,12 @@ public class GameManager : MonoBehaviour
     {
         if(firstCard.idx == secondCard.idx)
         {
+            if(panel != null)
+            {
+                panel.LoadContent(firstCard.idx);
+            }
+            Time.timeScale = 0f;
+            StartCoroutine(ShowCoroutine());
             audioSource.PlayOneShot(clip);
             firstCard.DestroyCard();
             secondCard.DestroyCard();
@@ -78,5 +84,19 @@ public class GameManager : MonoBehaviour
         }
         firstCard = null;
         secondCard = null;
+    }
+    public void ResumeGame()
+    {
+        gamePanel.SetActive(false);
+        Time.timeScale = 1f;
+    }
+    IEnumerator ShowCoroutine()
+    {
+        yield return new WaitForSecondsRealtime(0.4f);
+        Show();
+    }
+    public void Show()
+    {
+        gamePanel.SetActive(true);
     }
 }
