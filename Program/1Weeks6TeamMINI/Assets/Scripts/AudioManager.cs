@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    public static AudioManager Instance;
 
     AudioSource audioSource;
     public AudioClip clip;
+    public static AudioManager Instance;
+
 
     private void Awake()
     {
@@ -21,11 +22,17 @@ public class AudioManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
     void Start()
     {
         AudioSource audioSource = GetComponent<AudioSource>();
         audioSource.clip = this.clip;
         audioSource.Play();
     }
-}
 
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+}
