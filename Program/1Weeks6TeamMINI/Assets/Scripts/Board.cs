@@ -24,6 +24,7 @@ public class NewBehaviourScript : MonoBehaviour
             go.GetComponent<card>().Setting(arr[i]);
         }
 
+
         GameManager.Instance.cardCount = arr.Length;
     }
 }
