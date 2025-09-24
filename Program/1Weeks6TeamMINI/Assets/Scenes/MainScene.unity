@@ -574,6 +574,7 @@ MonoBehaviour:
   secondCard: {fileID: 0}
   timeTxt: {fileID: 181952412}
   endTxt: {fileID: 0}
+  clip: {fileID: 8300000, guid: fec2a3feb10a58c4da8403bae3c985b4, type: 3}
   cardCount: 0
   totalTime: 30
 --- !u!82 &1348174734
