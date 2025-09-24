@@ -49,4 +49,6 @@ public class GameManager : MonoBehaviour
 
         timeTxt.text = totalTime.ToString("N2");
     }
+
+    // 매치 함수 아직 없어서 만들어진 이후에 매치 사운드 넣겠습니다.
 }
