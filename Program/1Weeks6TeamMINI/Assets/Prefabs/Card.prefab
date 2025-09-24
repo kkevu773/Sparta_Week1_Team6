@@ -51,7 +51,7 @@ MonoBehaviour:
   front: {fileID: 1657342441188489581}
   back: {fileID: 2880615407622792983}
   clip: {fileID: 8300000, guid: 476c90999c4557b449fdf45eaf33da1c, type: 3}
-  frontImage: {fileID: 0}
+  frontImage: {fileID: 9106793640711110563}
 --- !u!82 &-6455878029216437015
 AudioSource:
   m_ObjectHideFlags: 0
