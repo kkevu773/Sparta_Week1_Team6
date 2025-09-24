@@ -13,8 +13,8 @@ public class Board : MonoBehaviour
         {
             GameObject go = Instantiate(Card, this.transform);
 
-            int x = i % 3;
-            int y = i / 3;
+            float x = (i % 3) * 1.4f - 1.4f;
+            float y = (i / 3) * 1.4f - 3.4f;
 
             go.transform.position = new Vector2(x, y);
         }
