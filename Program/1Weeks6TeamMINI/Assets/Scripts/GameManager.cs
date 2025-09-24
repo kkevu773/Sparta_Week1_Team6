@@ -11,8 +11,13 @@ public class GameManager : MonoBehaviour
     public card secondCard;
     private Panel panel;
     public Text timeTxt;
+<<<<<<< HEAD
     public Text endTxt;
     float timer = 0f;
+=======
+    public GameObject endTxt;
+
+>>>>>>> New-Dev_1
     AudioSource audioSource;
     public AudioClip clip;
 
