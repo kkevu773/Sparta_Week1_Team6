@@ -5,7 +5,7 @@ using System.Linq;
 
 public class NewBehaviourScript : MonoBehaviour
 {
-    public Transform cards;
+    //public Transform cards;
     public GameObject card;
     // Start is called before the first frame update
     void Start()
