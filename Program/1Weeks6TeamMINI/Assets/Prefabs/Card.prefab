@@ -49,6 +49,7 @@ MonoBehaviour:
   idx: 0
   front: {fileID: 1657342441188489581}
   back: {fileID: 2880615407622792983}
+  clip: {fileID: 8300000, guid: 476c90999c4557b449fdf45eaf33da1c, type: 3}
   frontImage: {fileID: 0}
 --- !u!1 &1657342441188489581
 GameObject:
