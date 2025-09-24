@@ -8,6 +8,7 @@ public class card : MonoBehaviour
 
     public GameObject front;
     public GameObject back;
+    public Animator anim;
 
     public SpriteRenderer frontImage;
 
@@ -27,5 +28,15 @@ public class card : MonoBehaviour
     {
         idx = number;
         frontImage.sprite = Resources.Load<Sprite>($"6teamMe{idx}");
+    }
+    public void OpenCard()
+    {
+        anim.SetBool("isOpen", true);
+        front.SetActive(true);
+        back.SetActive(false);
+    }
+    void OnMouseDown()
+    {
+        OpenCard();
     }
 }
