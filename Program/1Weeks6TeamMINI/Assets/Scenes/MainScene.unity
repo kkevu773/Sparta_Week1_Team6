@@ -330,7 +330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8d7c4882b56a894ea93f9de5dd1ddd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  card: {fileID: 641608616654000339, guid: 8ae3ef97fef7b834ab6a7d28d0fb1709, type: 3}
+  card: {fileID: 641608616654000339, guid: 6c32b0ac8f9d9474792b91132e898b75, type: 3}
 --- !u!1 &770405508
 GameObject:
   m_ObjectHideFlags: 0
