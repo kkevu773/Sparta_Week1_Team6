@@ -10,12 +10,15 @@ public class card : MonoBehaviour
     public GameObject back;
     public Animator anim;
 
+    AudioSource audioSource;
+    public AudioClip clip;
+
     public SpriteRenderer frontImage;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -29,12 +32,15 @@ public class card : MonoBehaviour
         idx = number;
         frontImage.sprite = Resources.Load<Sprite>($"6teamMe{idx}");
     }
+
+
     public void OpenCard()
     {
         if (GameManager.Instance.secondCard != null) return;
         anim.SetBool("isOpen", true);
         front.SetActive(true);
         back.SetActive(false);
+        audioSource.PlayOneShot(clip);
     }
     void OnMouseDown()
     {
