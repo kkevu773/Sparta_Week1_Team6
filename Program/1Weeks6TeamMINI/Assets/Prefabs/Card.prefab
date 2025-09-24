@@ -365,7 +365,11 @@ MonoBehaviour:
       - m_Target: {fileID: -7575975048647901852}
         m_TargetAssemblyTypeName: card, Assembly-CSharp
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         m_MethodName: 
+=======
+        m_MethodName: OpenCard
+>>>>>>> Stashed changes
 =======
         m_MethodName: OpenCard
 >>>>>>> Stashed changes
