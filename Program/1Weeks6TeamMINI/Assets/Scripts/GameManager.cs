@@ -45,4 +45,19 @@ public class GameManager : MonoBehaviour
 
         timeTxt.text = totalTime.ToString("N2");
     }
+    public void Matched()
+    {
+        if(firstCard.idx == secondCard.idx)
+        {
+            firstCard.DestroyCard();
+            secondCard.DestroyCard();
+        }
+        else
+        {
+            firstCard.CloseCard();
+            secondCard.CloseCard();
+        }
+        firstCard = null;
+        secondCard = null;
+    }
 }

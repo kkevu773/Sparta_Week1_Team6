@@ -31,6 +31,7 @@ public class card : MonoBehaviour
     }
     public void OpenCard()
     {
+        if (GameManager.Instance.secondCard != null) return;
         anim.SetBool("isOpen", true);
         front.SetActive(true);
         back.SetActive(false);
@@ -38,5 +39,23 @@ public class card : MonoBehaviour
     void OnMouseDown()
     {
         OpenCard();
+    }
+    public void DestroyCardInvoke()
+    {
+        Destroy(gameObject);
+    }
+    public void DestroyCard()
+    {
+        Invoke("DestroyCardInvoke", 1.0f);
+    }
+    public void CloseCardInvoke()
+    {
+        anim.SetBool("isOpen", false);
+        front.SetActive(false);
+        back.SetActive(true);
+    }
+    public void CloseCard()
+    {
+        Invoke("CloseCardInvoke", 1.0f);
     }
 }
