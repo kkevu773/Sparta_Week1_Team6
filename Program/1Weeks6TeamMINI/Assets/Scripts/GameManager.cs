@@ -61,7 +61,7 @@ public class GameManager : MonoBehaviour
             if(cardCount == 0)
             {             
                 Time.timeScale = 0.0f;
-                endTxt.SetActive(false);
+                endTxt.SetActive(true);
             }
         }
         else
