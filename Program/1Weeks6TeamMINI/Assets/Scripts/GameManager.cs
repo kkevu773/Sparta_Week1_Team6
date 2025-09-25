@@ -25,6 +25,10 @@ public class GameManager : MonoBehaviour
 
     private bool isGameOver = false;
 
+    public Image resultImage;         // 씬의 UI Image (결과 표시용). Inspector에 연결
+    public Sprite successSprite;      // 성공 스프라이트
+    public Sprite failSprite;         // 실패 스프라이트
+
     public void Awake()
     {
         if (Instance == null)
@@ -58,13 +62,24 @@ public class GameManager : MonoBehaviour
                 Time.timeScale = 0f;
                 audioSource = null;
                 isGameOver = true;
+
+                ShowResult(false); // 실패
             }
+
         }
-        
-       
 
         timeTxt.text = totalTime.ToString("N2");
     }
+
+    void ShowResult(bool success)
+    {
+        if (resultImage == null) return;
+        resultImage.sprite = success ? successSprite : failSprite;
+        resultImage.enabled = true;                   // 컴포넌트 활성화
+        resultImage.gameObject.SetActive(true);       // 오브젝트 활성화
+        resultImage.transform.SetAsLastSibling();     // 최상단으로
+    }
+
     public void Matched()
     {
         if(firstCard.idx == secondCard.idx)
@@ -81,9 +96,9 @@ public class GameManager : MonoBehaviour
             cardCount -= 2;
             if(cardCount == 0)
             {
+                isGameOver = true;
                 Invoke("Invokere", 0.5f);
                 Time.timeScale = 0.0f;
-                isGameOver = true;
             }
         }
         else
@@ -112,5 +127,6 @@ public class GameManager : MonoBehaviour
     void Invokere()
     {
         restartbtn.SetActive(true);
+        ShowResult(true);
     }
 }
