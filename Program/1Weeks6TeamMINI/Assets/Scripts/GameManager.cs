@@ -21,7 +21,9 @@ public class GameManager : MonoBehaviour
     public Text bestRecord;
     public Text reNew;
 
-    public Image resultImage;      // 씬의 UI Image (결과 표시용), Inspector에서 연결
+    public GameObject resultobj;      // 씬의 UI Image (결과 표시용), Inspector에서 연결
+    public GameObject successobj;
+    public GameObject loseobj;
     public Sprite successImage;    // 성공 이미지
     public Sprite loseImage;     // 실패 이미지
 
@@ -74,6 +76,12 @@ public class GameManager : MonoBehaviour
             }
             else
             {
+                Debug.Log("타임오버");
+                reNew.text = success;
+                currentRecord.text = playTime.ToString("N2");
+                bestRecord.text = best.ToString("N2");
+                Invokere();
+                //Invoke("Invokere", 0.5f);
                 totalTime = 0f;
                 restartbtn.SetActive(true);
                 Time.timeScale = 0f;
@@ -81,6 +89,7 @@ public class GameManager : MonoBehaviour
                 isGameOver = true;
                 isTimeOver = true;
                 ShowResult(false); // 실패 이미지 표시
+
             }
         }
         // 게임이 종료되었을 때
@@ -150,11 +159,18 @@ public class GameManager : MonoBehaviour
 
     public void ShowResult(bool isSuccess)
     {
-        if (resultImage == null) return;
-        //resultImage.sprite = success ? successImage : failedImage;
-        resultImage.enabled = true;                    // 이미지 컴포넌트 활성화
-        resultImage.gameObject.SetActive(true);        // 이미지 게임오브젝트 활성화
-        resultImage.transform.SetAsLastSibling();      // 이미지가 다른 UI 요소들보다 위에 표시되도록 설정
+        if (isSuccess)
+        {
+            resultobj.SetActive(true);
+            successobj.SetActive(true);
+            loseobj.SetActive(false);
+        }
+        else
+        {
+            resultobj.SetActive(true);
+            successobj.SetActive(false);
+            loseobj.SetActive(true);
+        }
     }
     public void Matched()
     {
@@ -201,6 +217,7 @@ public class GameManager : MonoBehaviour
 
     void Invokere()
     {
+        Debug.Log("결과창이 실행됩니다.");
         restartbtn.SetActive(true);
         recordWindow.SetActive(true);
         ShowResult(true);
