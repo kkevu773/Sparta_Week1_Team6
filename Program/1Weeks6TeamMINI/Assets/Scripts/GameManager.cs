@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
 
     public Image resultImage;      // 씬의 UI Image (결과 표시용), Inspector에서 연결
     public Sprite successImage;    // 성공 이미지
-    public Sprite failedImage;     // 실패 이미지
+    public Sprite loseImage;     // 실패 이미지
 
     AudioSource audioSource;
     public AudioClip clip;
