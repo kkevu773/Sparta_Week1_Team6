@@ -234,7 +234,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &116365395
 RectTransform:
   m_ObjectHideFlags: 0
@@ -923,7 +923,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &381658094
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2243,9 +2243,11 @@ MonoBehaviour:
   currentRecord: {fileID: 331257695}
   bestRecord: {fileID: 1160272613}
   reNew: {fileID: 692994089}
-  resultImage: {fileID: 821642866}
-  successSprite: {fileID: 0}
-  LoseSprite: {fileID: 0}
+  resultobj: {fileID: 821642865}
+  successobj: {fileID: 381658093}
+  loseobj: {fileID: 116365394}
+  successImage: {fileID: 21300000, guid: 3ac51824f54fc3a42a78002e6c6bd92b, type: 3}
+  loseImage: {fileID: 21300000, guid: 23f3d6a7fce46b44084e88344de3aed1, type: 3}
   clip: {fileID: 8300000, guid: 476c90999c4557b449fdf45eaf33da1c, type: 3}
   cardCount: 0
   totalTime: 30
