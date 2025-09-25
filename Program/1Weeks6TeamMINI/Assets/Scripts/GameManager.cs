@@ -76,7 +76,6 @@ public class GameManager : MonoBehaviour
             }
             else
             {
-                Debug.Log("타임오버");
                 reNew.text = success;
                 currentRecord.text = playTime.ToString("N2");
                 bestRecord.text = best.ToString("N2");
@@ -217,7 +216,6 @@ public class GameManager : MonoBehaviour
 
     void Invokere()
     {
-        Debug.Log("결과창이 실행됩니다.");
         restartbtn.SetActive(true);
         recordWindow.SetActive(true);
         ShowResult(true);
