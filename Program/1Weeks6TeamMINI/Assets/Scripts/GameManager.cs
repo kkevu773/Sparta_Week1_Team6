@@ -21,6 +21,10 @@ public class GameManager : MonoBehaviour
     public Text bestRecord;
     public Text reNew;
 
+    public Image resultImage;      // 씬의 UI Image (결과 표시용), Inspector에서 연결
+    public Sprite successImage;    // 성공 이미지
+    public Sprite failedImage;     // 실패 이미지
+
     AudioSource audioSource;
     public AudioClip clip;
 
@@ -76,6 +80,7 @@ public class GameManager : MonoBehaviour
                 audioSource = null;
                 isGameOver = true;
                 isTimeOver = true;
+                ShowResult(false); // 실패 이미지 표시
             }
         }
         // 게임이 종료되었을 때
@@ -142,6 +147,15 @@ public class GameManager : MonoBehaviour
 
             timeTxt.text = totalTime.ToString("N2");
     }
+
+    public void ShowResult(bool isSuccess)
+    {
+        if (resultImage == null) return;
+        //resultImage.sprite = success ? successImage : failedImage;
+        resultImage.enabled = true;                    // 이미지 컴포넌트 활성화
+        resultImage.gameObject.SetActive(true);        // 이미지 게임오브젝트 활성화
+        resultImage.transform.SetAsLastSibling();      // 이미지가 다른 UI 요소들보다 위에 표시되도록 설정
+    }
     public void Matched()
     {
         if(firstCard.idx == secondCard.idx)
@@ -189,5 +203,6 @@ public class GameManager : MonoBehaviour
     {
         restartbtn.SetActive(true);
         recordWindow.SetActive(true);
+        ShowResult(true);
     }
 }
