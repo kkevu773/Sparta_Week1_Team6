@@ -21,21 +21,21 @@ public class GameManager : MonoBehaviour
     public Text bestRecord;
     public Text reNew;
 
-    public Image resultImage;      // 씬의 UI Image (결과 표시용), Inspector에서 연결
-    public Sprite successImage;    // 성공 이미지
-    public Sprite failedImage;     // 실패 이미지
+    public Image resultImage;? ? ? // 씬의 UI Image (결과 표시용), Inspector에서 연결
+? ? public Sprite successImage;? ? // 성공 이미지
+? ? public Sprite failedImage;? ? ?// 실패 이미지
 
-    AudioSource audioSource;
+? ? AudioSource audioSource;
     public AudioClip clip;
 
     public int cardCount = 0;
 
     public float totalTime = 30.0f;
     public float playTime = 0.0f; //플레이시간을 기록할 변수
-    public float best; // 최고기록을 임시로 보존할 변수
+? ? public float best; // 최고기록을 임시로 보존할 변수
 
-    // 표시할 문구를 정수로 지정
-    private static string success = "성공";
+? ? // 표시할 문구를 정수로 지정
+? ? private static string success = "성공";
     private static string failed = "실패";
     private static string reNewBest = "최고기록 갱신!";
     private static string noBest = " 없음 ";
@@ -44,26 +44,27 @@ public class GameManager : MonoBehaviour
     private bool isTimeOver = false; // 타임오버를 체크할 bool형 변수
 
 
-    public void Awake()
+? ? public void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
         }
         panel = gamePanel.GetComponent<Panel>();
-       
+
     }
 
-    // Start is called before the first frame update
-    void Start()
+? ? // Start is called before the first frame update
+? ? void Start()
     {
         isGameOver = false;
+        isTimeOver = false;
         Time.timeScale = 1;
         audioSource = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
-    void Update()
+? ? // Update is called once per frame
+? ? void Update()
     {
         if (!isGameOver)
         {
@@ -81,27 +82,27 @@ public class GameManager : MonoBehaviour
                 isGameOver = true;
                 isTimeOver = true;
                 ShowResult(false); // 실패 이미지 표시
-            }
+? ? ? ? ? ? }
         }
-        // 게임이 종료되었을 때
-        else
+? ? ? ? // 게임이 종료되었을 때
+? ? ? ? else
         {
-            // 타임오버가 아닐때
-            if(!isTimeOver)
+? ? ? ? ? ? // 타임오버가 아닐때
+? ? ? ? ? ? if (!isTimeOver)
             {
-                // 이미 최고기록이 있을 때.
-                if(PlayerPrefs.HasKey("bestRecord"))
-                { 
+? ? ? ? ? ? ? ? // 이미 최고기록이 있을 때.
+? ? ? ? ? ? ? ? if (PlayerPrefs.HasKey("bestRecord"))
+                {
                     best = PlayerPrefs.GetFloat("bestRecord", best);
-                    // 최고기록이 현재기록보다 빠를 때
-                    if (best < playTime)
+? ? ? ? ? ? ? ? ? ? // 최고기록이 현재기록보다 빠를 때
+? ? ? ? ? ? ? ? ? ? if (best < playTime)
                     {
                         reNew.text = success;
                         currentRecord.text = playTime.ToString("N2");
-                        bestRecord.text = best.ToString("N2");                
+                        bestRecord.text = best.ToString("N2");
                     }
-                    // 현재기록보다 느릴때
-                    else
+? ? ? ? ? ? ? ? ? ? // 현재기록보다 느릴때
+? ? ? ? ? ? ? ? ? ? else
                     {
                         PlayerPrefs.SetFloat("bestRecord", playTime);
                         PlayerPrefs.Save();
@@ -110,8 +111,8 @@ public class GameManager : MonoBehaviour
                         bestRecord.text = best.ToString("N2");
                     }
                 }
-                // 없을 때.
-                else
+? ? ? ? ? ? ? ? // 없을 때.
+? ? ? ? ? ? ? ? else
                 {
                     reNew.text = reNewBest;
                     PlayerPrefs.SetFloat("bestRecord", playTime);
@@ -121,10 +122,10 @@ public class GameManager : MonoBehaviour
                     bestRecord.text = best.ToString("N2");
                 }
 
-                
+
             }
-            // 타임오버시
-            else
+? ? ? ? ? ? // 타임오버시
+? ? ? ? ? ? else
             {
                 reNew.text = failed;
                 if (PlayerPrefs.HasKey("bestRecord"))
@@ -145,22 +146,22 @@ public class GameManager : MonoBehaviour
 
 
 
-            timeTxt.text = totalTime.ToString("N2");
+        timeTxt.text = totalTime.ToString("N2");
     }
 
     public void ShowResult(bool isSuccess)
     {
         if (resultImage == null) return;
-        //resultImage.sprite = success ? successImage : failedImage;
-        resultImage.enabled = true;                    // 이미지 컴포넌트 활성화
-        resultImage.gameObject.SetActive(true);        // 이미지 게임오브젝트 활성화
-        resultImage.transform.SetAsLastSibling();      // 이미지가 다른 UI 요소들보다 위에 표시되도록 설정
-    }
+? ? ? ? //resultImage.sprite = success ? successImage : failedImage;
+? ? ? ? resultImage.enabled = true;? ? ? ? ? ? ? ? ? ? // 이미지 컴포넌트 활성화
+? ? ? ? resultImage.gameObject.SetActive(true);? ? ? ? // 이미지 게임오브젝트 활성화
+? ? ? ? resultImage.transform.SetAsLastSibling();? ? ? // 이미지가 다른 UI 요소들보다 위에 표시되도록 설정
+? ? }
     public void Matched()
     {
-        if(firstCard.idx == secondCard.idx)
+        if (firstCard.idx == secondCard.idx)
         {
-            if(panel != null)
+            if (panel != null)
             {
                 panel.LoadContent(firstCard.idx);
             }
@@ -170,7 +171,7 @@ public class GameManager : MonoBehaviour
             firstCard.DestroyCard();
             secondCard.DestroyCard();
             cardCount -= 2;
-            if(cardCount == 0)
+            if (cardCount == 0)
             {
                 Time.timeScale = 0.0f;
                 isGameOver = true;
