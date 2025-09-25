@@ -87,7 +87,6 @@ public class GameManager : MonoBehaviour
                 // 이미 최고기록이 있을 때.
                 if(PlayerPrefs.HasKey("bestRecord"))
                 { 
-                    recordWindow.SetActive(true);
                     best = PlayerPrefs.GetFloat("bestRecord", best);
                     // 최고기록이 현재기록보다 빠를 때
                     if (best < playTime)
@@ -110,19 +109,19 @@ public class GameManager : MonoBehaviour
                 else
                 {
                     reNew.text = reNewBest;
-                    recordWindow.SetActive(true);
                     PlayerPrefs.SetFloat("bestRecord", playTime);
                     PlayerPrefs.Save();
                     best = playTime;
                     currentRecord.text = playTime.ToString("N2");
                     bestRecord.text = best.ToString("N2");
                 }
+
+                
             }
             // 타임오버시
             else
             {
                 reNew.text = failed;
-                recordWindow.SetActive(true);
                 if (PlayerPrefs.HasKey("bestRecord"))
                 {
                     PlayerPrefs.GetFloat("bestRecord", best);
@@ -135,6 +134,8 @@ public class GameManager : MonoBehaviour
                     bestRecord.text = noBest;
                 }
             }
+
+            Invoke("Invokere", 0.5f);
         }
 
 
@@ -157,7 +158,6 @@ public class GameManager : MonoBehaviour
             cardCount -= 2;
             if(cardCount == 0)
             {
-                Invoke("Invokere", 0.5f);
                 Time.timeScale = 0.0f;
                 isGameOver = true;
             }
@@ -188,5 +188,6 @@ public class GameManager : MonoBehaviour
     void Invokere()
     {
         restartbtn.SetActive(true);
+        recordWindow.SetActive(true);
     }
 }
