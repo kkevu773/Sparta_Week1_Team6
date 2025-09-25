@@ -8,11 +8,11 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     public GameObject gamePanel;
-    private Panel panel;
+
 
     public card firstCard;
     public card secondCard;
-
+    private Panel panel;
     public Text timeTxt;
     public GameObject restartbtn;
 
@@ -81,7 +81,7 @@ public class GameManager : MonoBehaviour
             cardCount -= 2;
             if(cardCount == 0)
             {
-                restartbtn.SetActive(true);
+                Invoke("Invokere", 0.5f);
                 Time.timeScale = 0.0f;
                 isGameOver = true;
             }
@@ -107,5 +107,10 @@ public class GameManager : MonoBehaviour
     public void Show()
     {
         gamePanel.SetActive(true);
+    }
+
+    void Invokere()
+    {
+        restartbtn.SetActive(true);
     }
 }
