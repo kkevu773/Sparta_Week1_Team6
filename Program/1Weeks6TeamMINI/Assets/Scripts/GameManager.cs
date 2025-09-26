@@ -98,6 +98,7 @@ public class GameManager : MonoBehaviour
             if(!isTimeOver)
             {
                 playTime = totalTime;
+
                 // 이미 최고기록이 있을 때.
                 if (PlayerPrefs.HasKey("bestRecord"))
                 { 
@@ -106,7 +107,7 @@ public class GameManager : MonoBehaviour
                     if (best < playTime)
                     {
                         PlayerPrefs.SetFloat("bestRecord", playTime);
-                        reNew.text = success;
+                        reNew.text = reNewBest;
                         currentRecord.text = playTime.ToString("N2");
                         bestRecord.text = best.ToString("N2");                
                     }
@@ -115,7 +116,7 @@ public class GameManager : MonoBehaviour
                     {
                         PlayerPrefs.SetFloat("bestRecord", best);
                         PlayerPrefs.Save();
-                        reNew.text = " ";
+                        reNew.text = reNewBest;
                         currentRecord.text = playTime.ToString("N2");
                         bestRecord.text = best.ToString("N2");
                     }
