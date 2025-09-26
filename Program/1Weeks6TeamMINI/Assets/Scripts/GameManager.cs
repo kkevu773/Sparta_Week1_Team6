@@ -111,7 +111,7 @@ public class GameManager : MonoBehaviour
                     // 현재기록보다 느릴때
                     else
                     {
-                        PlayerPrefs.SetFloat("bestRecord", best);
+                        PlayerPrefs.SetFloat("bestRecord", playTime);
                         PlayerPrefs.Save();
                         reNew.text = " ";
                         currentRecord.text = playTime.ToString("N2");
