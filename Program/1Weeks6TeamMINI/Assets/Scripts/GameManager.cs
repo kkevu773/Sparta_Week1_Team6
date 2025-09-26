@@ -173,31 +173,38 @@ public class GameManager : MonoBehaviour
     }
     public void Matched()
     {
-        if(firstCard.idx == secondCard.idx)
+        if (firstCard != null && secondCard != null)
         {
-            if(panel != null)
+            if (firstCard != secondCard && firstCard.idx == secondCard.idx)
             {
-                panel.LoadContent(firstCard.idx);
+                // 매칭 성공
+                if (panel != null)
+                {
+                    panel.LoadContent(firstCard.idx);
+                }
+                Time.timeScale = 0f;
+                StartCoroutine(ShowCoroutine());
+                audioSource.PlayOneShot(clip);
+                firstCard.DestroyCard();
+                secondCard.DestroyCard();
+                cardCount -= 2;
+
+                if (cardCount == 0)
+                {
+                    Time.timeScale = 0.0f;
+                    isGameOver = true;
+                }
             }
-            Time.timeScale = 0f;
-            StartCoroutine(ShowCoroutine());
-            audioSource.PlayOneShot(clip);
-            firstCard.DestroyCard();
-            secondCard.DestroyCard();
-            cardCount -= 2;
-            if(cardCount == 0)
+            else
             {
-                Time.timeScale = 0.0f;
-                isGameOver = true;
+                // 매칭 실패 (혹은 같은 카드 두 번 클릭)
+                firstCard.CloseCard();
+                secondCard.CloseCard();
             }
+
+            firstCard = null;
+            secondCard = null;
         }
-        else
-        {
-            firstCard.CloseCard();
-            secondCard.CloseCard();
-        }
-        firstCard = null;
-        secondCard = null;
     }
     public void ResumeGame()
     {
