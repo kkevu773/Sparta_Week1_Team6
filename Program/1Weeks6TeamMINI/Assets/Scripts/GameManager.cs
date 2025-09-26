@@ -115,7 +115,7 @@ public class GameManager : MonoBehaviour
                     {
                         PlayerPrefs.SetFloat("bestRecord", best);
                         PlayerPrefs.Save();
-                        reNew.text = reNewBest;
+                        reNew.text = " ";
                         currentRecord.text = playTime.ToString("N2");
                         bestRecord.text = best.ToString("N2");
                     }
