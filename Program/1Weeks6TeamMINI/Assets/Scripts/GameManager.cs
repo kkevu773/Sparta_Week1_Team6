@@ -104,7 +104,6 @@ public class GameManager : MonoBehaviour
                     // 최고기록이 현재기록보다 빠를 때
                     if (best < playTime)
                     {
-                        PlayerPrefs.SetFloat("bestRecord", playTime);
                         reNew.text = success;
                         currentRecord.text = playTime.ToString("N2");
                         bestRecord.text = best.ToString("N2");                
