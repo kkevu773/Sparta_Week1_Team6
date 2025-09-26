@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
     public float best; // 최고기록을 임시로 보존할 변수
 
     // 표시할 문구를 정수로 지정
-    private static string success = "성공";
+    private static string success = "CLEAR TIME";
     private static string failed = "실패";
     private static string reNewBest = "최고기록 갱신!";
     private static string noBest = " 없음 ";
@@ -113,7 +113,7 @@ public class GameManager : MonoBehaviour
                     {
                         PlayerPrefs.SetFloat("bestRecord", playTime);
                         PlayerPrefs.Save();
-                        reNew.text = reNewBest;
+                        reNew.text = success;
                         currentRecord.text = playTime.ToString("N2");
                         bestRecord.text = best.ToString("N2");
                     }
@@ -121,7 +121,7 @@ public class GameManager : MonoBehaviour
                 // 없을 때.
                 else
                 {
-                    reNew.text = reNewBest;
+                    reNew.text = success;
                     PlayerPrefs.SetFloat("bestRecord", playTime);
                     PlayerPrefs.Save();
                     best = playTime;
@@ -134,7 +134,7 @@ public class GameManager : MonoBehaviour
             // 타임오버시
             else
             {
-                reNew.text = failed;
+                reNew.text = success;
                 if (PlayerPrefs.HasKey("bestRecord"))
                 {
                     PlayerPrefs.GetFloat("bestRecord", best);
